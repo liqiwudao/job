@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FilmSlate | 登录</title>
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/css/dashboard/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/css/dashboard/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/static/css/dashboard/custom.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="/static/css/dashboard/animate.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+</head>
+
+<body class="login">
+<div>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <!--<form>-->
+                    <h1>后台系统</h1>
+
+
+                    <div style="margin-bottom: 10px">
+                        <input type="tel" id="tel" class="form-control" maxlength="11" placeholder="手机号" required=""/>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 0px">
+                        <input style="border-radius: 0px;" type="text" id="code" class="form-control" maxlength="6" placeholder="验证码">
+                            <span class="input-group-btn">
+                              <button style="margin-bottom: 19px;  border-radius: 0px; ; width: 100%;" type="button"
+                                      class="btn btn-primary"
+                                      id="get_code">
+                                  获取验证码
+                              </button>
+                            </span>
+                    </div>
+
+                    <button class="btn btn-success" id="submit"
+                            style="text-shadow: 0 0px 0 #fff;width: 100%;">登录
+                    </button>
+
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+
+
+                        <div class="clearfix"></div>
+                        <br/>
+
+                        <div>
+                            <h1><i class="fa fa-paw"></i>FilmSlate</h1>
+
+                            <p>©2017 JiWen Zheng</p>
+                        </div>
+                    </div>
+                <!--</form>-->
+            </section>
+        </div>
+
+
+    </div>
+</div>
+<script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/dashboard/signin.js"></script>
+</body>
+</html>

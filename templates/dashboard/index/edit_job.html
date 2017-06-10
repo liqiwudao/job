@@ -1,0 +1,215 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title%}
+编辑职位
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+</style>
+
+<ol class="breadcrumb">
+    <li><a href="/dashboard/job/">职位列表</a></li>
+    <li class="active">编辑职位</li>
+</ol>
+
+
+<p id="data" data="{{ data }}"></p>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <form class="form-horizontal form-label-left input_mask">
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位类别</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select class="form-control" id="job_class">
+                        <option value="1">翻译</option>
+                        <option value="2">演员</option>
+                        <option value="3">编剧</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位名称</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" id="job_name" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">招聘部门</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" id="job_department" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位诱惑</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" id="job_temptation" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作性质</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12" id="job_category">
+                    <input type="radio" class="category" name="category" id="genderM" value="1"> 全职
+                    <input type="radio" class="category" name="category" id="genderF" value="2" style="margin-left: 5px"
+                           value="F"/> 兼职
+                    <input type="radio" class="category" name="category" id="genderI" value="3" style="margin-left: 5px"
+                           value="F"/> 实习
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作经验</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select class="form-control" id="job_experience">
+                        <option value="1">不限</option>
+                        <option value="2">应届毕业生</option>
+                        <option value="3">1年以下</option>
+                        <option value="4">1-3年</option>
+                        <option value="5">3-5年</option>
+                        <option value="6">5-10年</option>
+                        <option value="7">10年以上</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">学历要求</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <select class="form-control" id="education">
+                        <option value="1">大专</option>
+                        <option value="2">本科</option>
+                        <option value="3">硕士</option>
+                        <option value="4">博士</option>
+                        <option value="5">不限</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">月薪范围 (K)</label>
+
+                <div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <input type="number" id="salary_start" class="form-control" placeholder="">
+                    </div>
+
+                    <span style="float: left;padding-top: 6px">至</span>
+
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <input type="number" id="salary_end" class="form-control" placeholder="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作地点</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" id="location" placeholder="">
+                </div>
+            </div>
+
+        </form>
+
+        </br>
+
+
+        </br>
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">职位描述</label>
+
+            <div class="x_content">
+                <div id="alerts"></div>
+                <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor">
+
+
+                    <div class="btn-group">
+                        <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                        <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                        <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i
+                                class="fa fa-underline"></i></a>
+                    </div>
+
+                    <div class="btn-group">
+                        <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                        <a class="btn" data-edit="insertorderedlist" title="Number list"><i
+                                class="fa fa-list-ol"></i></a>
+                        <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                    </div>
+
+                    <div class="btn-group">
+                        <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i
+                                class="fa fa-align-left"></i></a>
+                        <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i
+                                class="fa fa-align-center"></i></a>
+                        <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i
+                                class="fa fa-align-right"></i></a>
+                        <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i
+                                class="fa fa-align-justify"></i></a>
+                    </div>
+
+
+                    <!--<div class="btn-group">-->
+                    <!--<a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>-->
+                    <!--&lt;!&ndash;<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />&ndash;&gt;-->
+                    <!--</div>-->
+
+                    <div class="btn-group">
+                        <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                        <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                    </div>
+                </div>
+
+                <div id="editor" class="editor-wrapper"></div>
+
+                <textarea name="descr" id="descr" style="display:none;"></textarea>
+
+
+                <button type="button" href="/dashboard/edit_job/" id="submit"
+                        class="btn btn-primary " style="margin-top: 15px; width: 100%">
+                    提交
+                </button>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block script %}
+<script src="/static/js/dashboard/bootstrap-wysiwyg.min.js"></script>
+<script src="/static/js/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="/static/js/vendors/google-code-prettify/src/prettify.js"></script>
+<!--<script src="/static/js/jquery.twbsPagination.min.js"></script>-->
+<script src="/static/js/dashboard/candidates.js"></script>
+<script src="/static/js/dashboard/edit_job.js"></script>
+
+{% endblock %}

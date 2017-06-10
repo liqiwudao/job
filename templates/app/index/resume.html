@@ -1,0 +1,327 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+编辑简历
+{% endblock %}
+
+{% block body %}
+
+
+<div id="bonfire-pageloader" class="hidden">
+    <div class="bonfire-pageloader-icon">
+        <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="circle" class="g-circles g-circles--v1">
+                <circle id="12" transform="translate(35, 16.698730) rotate(-30) translate(-35, -16.698730) " cx="35"
+                        cy="16.6987298" r="10"></circle>
+                <circle id="11" transform="translate(16.698730, 35) rotate(-60) translate(-16.698730, -35) "
+                        cx="16.6987298" cy="35" r="10"></circle>
+                <circle id="10" transform="translate(10, 60) rotate(-90) translate(-10, -60) " cx="10" cy="60"
+                        r="10"></circle>
+                <circle id="9" transform="translate(16.698730, 85) rotate(-120) translate(-16.698730, -85) "
+                        cx="16.6987298" cy="85" r="10"></circle>
+                <circle id="8" transform="translate(35, 103.301270) rotate(-150) translate(-35, -103.301270) " cx="35"
+                        cy="103.30127" r="10"></circle>
+                <circle id="7" cx="60" cy="110" r="10"></circle>
+                <circle id="6" transform="translate(85, 103.301270) rotate(-30) translate(-85, -103.301270) " cx="85"
+                        cy="103.30127" r="10"></circle>
+                <circle id="5" transform="translate(103.301270, 85) rotate(-60) translate(-103.301270, -85) "
+                        cx="103.30127" cy="85" r="10"></circle>
+                <circle id="4" transform="translate(110, 60) rotate(-90) translate(-110, -60) " cx="110" cy="60"
+                        r="10"></circle>
+                <circle id="3" transform="translate(103.301270, 35) rotate(-120) translate(-103.301270, -35) "
+                        cx="103.30127" cy="35" r="10"></circle>
+                <circle id="2" transform="translate(85, 16.698730) rotate(-150) translate(-85, -16.698730) " cx="85"
+                        cy="16.6987298" r="10"></circle>
+                <circle id="1" cx="60" cy="10" r="10"></circle>
+            </g>
+
+            <use xlink:href="#circle" class="use"></use>
+        </svg>
+
+    </div>
+
+</div>
+
+
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pt-94 pb-85 bg-3 bg-opacity-dark-blue-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h2 class="text-center text-white uppercase mb-17">编辑简历</h2>
+
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center m-0">
+                            <li class="text-white uppercase ml-15 mr-15"><a href="/">主页</a></li>
+                            <li class="text-white uppercase ml-15 mr-15">编辑简历</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breaxdcrumb Banner Area-->
+
+<p id="value" class="hidden" data="{{resume}}"></p>
+
+<!--Start of Single Job Post Area-->
+<div class="single-job-post-area pt-70 mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="#">
+                    <div class="single-job-content">
+
+
+                        <div id="info" class="title uppercase mt-45 mb-38"><span class="lg">基本信息</span>
+                            <!--<a href="#"-->
+                            <!--class="button button-medium-box button-red pull-right">编辑</a>-->
+                        </div>
+                        <div class="single-job-form">
+
+
+                            <div class="single-info pb-14">
+                                <label for="name" class="uppercase pull-left m-0">姓名（必填）</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" maxlength="16" id="name" name="name"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="birthday" class="uppercase pull-left m-0">生日（必填）</label>
+
+                                <div class="form-box fix">
+                                    <input id="birthday" placeholder="选择日期" class="mbsc-comp"
+                                           readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info" id="sex">
+
+
+                                <label class="radio-inline" style="line-height: 44px;">
+                                    <input type="radio" name="sex" id="man" value="1" checked>男
+                                </label>
+                                <label class="radio-inline" style="line-height: 44px;">
+                                    <input type="radio" name="sex" id="woman" value="2">女
+                                </label>
+
+                            </div>
+
+
+                            <div class="single-info mb-14">
+                                <label for="tel_num" class="uppercase pull-left m-0">手机号码（必填）</label>
+
+                                <div class="form-box fix">
+                                    <input type="tel" name="country" maxlength="11" id="tel_num"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+
+                            <div class="single-info mb-14">
+                                <label for="email" class="uppercase pull-left m-0">联系邮箱（必填）</label>
+
+                                <div class="form-box fix">
+                                    <input type="email" name="country" maxlength="48" id="email"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">教育经历</span></div>
+                        <div class="single-job-form">
+
+
+                            <div class="single-info mb-14">
+                                <label for="school" class="uppercase pull-left m-0">学校名称</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" id="school" name="address"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="major" class="uppercase pull-left m-0">所学专业</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" id="major" name="address"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="level" class="uppercase pull-left m-0">学历</label>
+
+                                <div class="form-box fix ">
+                                    <select class=" form-control" id="level">
+                                        <option value="1">大专</option>
+                                        <option value="2" selected>本科</option>
+                                        <option value="3">硕士</option>
+                                        <option value="4">博士</option>
+                                        <option value="5">其它</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="single-info mb-14">
+                                <label for="graduation_date" class="uppercase pull-left m-0">毕业年份</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" id="graduation_date" name="address"
+                                           placeholder="选择日期">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">工作经历</span></div>
+                        <div class="single-job-form">
+
+                            <div class="single-info mb-14">
+                                <label for="company" class="uppercase pull-left m-0">公司</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="company"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job" class="uppercase pull-left m-0">职位</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="job"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job_date_start" class="uppercase pull-left m-0">在职时间</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="job_date_start"
+                                           placeholder="选择日期">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job_date_end" class="uppercase pull-left m-0">截止日期</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="job_date_end"
+                                           placeholder="选择日期">
+                                </div>
+                            </div>
+
+
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">工作内容</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix textarea" cols="30" rows="10" id="job_content"
+                                              placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">期望工作</span></div>
+                        <div class="single-job-form">
+                            <div class="single-info mb-14">
+                                <label for="expect_job" class="uppercase pull-left m-0">期望职位</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="expect_job"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="single-info mb-14">
+                                <label for="expect_salary" class="uppercase pull-left m-0">期望月薪（元）</label>
+
+                                <div class="form-box fix">
+                                    <input type="number" id="expect_salary" name="degree" placeholder="" maxlength="10">
+                                </div>
+                            </div>
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">补充说明</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix small textarea" cols="30" rows="10"
+                                              id="postscript"
+                                              maxlength="500"
+                                              placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">其它信息</span></div>
+                        <div class="single-job-form">
+
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">自我描述</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix small textarea" cols="30" rows="10"
+                                              id="description"
+                                              maxlength="500"
+                                              placeholder="提供几个思路，试着从这些点描述自己：
+
+· 你认为值得称道的工作细节；
+· 你曾经克服过的最大挑战；
+· 你在找工作时最看重的方面；
+· 你曾经引以为豪的个人项目或者事迹；
+· 如果你是一位团队领导者，说说你的管理哲学以及独到的行业见解
+· 其它你认为能展示你优势的事情"></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="single-info mb-14 fix">
+                                <label for="file" class="uppercase pull-left m-0">附件简历</label>
+
+                                <div class="photo-uploader fix pull-left" id="fileupload">
+
+                                    <input type="file" id="file" name="fileupload"
+                                           accept="application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-powerpoint,text/plain,application/vnd.ms-works">
+                                    <span class="filename">请上传xls，xlsx，pdf, ppt, txt格式文件</span>
+                                    <span class="action">选择文件</span>
+
+                                </div>
+                                <div class=" fix pull-left download hidden" style="margin-top: 9px">
+                                    <a href="/api/download_resume/" id="download"> </a>
+                                    <button type="button" class="close" id="del_file"
+                                            style="    margin: -8px 0px 0px 15px;font-size: 30px;height: 24px;">
+                                        <span>×</span></button>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ml-160 mt-42">
+                                <a href="javascript:;" id="save" class="button button-medium-box">保存</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Single Job Post Area-->
+
+
+{% endblock %}
+
+
+<!--End of Account Area-->
+{% block script %}
+<script src="/static/js/mobiscroll.custom-3.0.0-beta6.min.js"></script>
+<!--<script src="/static/js/plugins/spin.min.js"></script>-->
+<script src="/static/js/resume.js"></script>
+
+{% endblock %}

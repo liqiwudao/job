@@ -1,0 +1,110 @@
+{% extends 'dashboard/base.html' %}
+
+{% block body %}
+
+
+<div class="row top_tiles">
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+            <div class="count">80</div>
+            <h3>在招职位</h3>
+
+            <p>
+                <a href="/dashboard/publish_job/">发布新职位</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+            <div class="count">80</div>
+            <h3>新简历</h3>
+
+            <p>
+                <a href="/dashboard/resume/">查看简历</a>
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>待面试
+
+            </h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <ul class="list-unstyled timeline">
+                <li>
+                    <div class="block">
+                        <div class="tags">
+                            <a href="" class="tag">
+                                <span>12:00</span>
+                            </a>
+                        </div>
+                        <div class="block_content">
+                            <h2 class="title">
+                                <a>剧本翻译</a>
+                            </h2>
+
+                            <div class="byline">
+                                <span>Eric </span><a href="#">查看简历</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="block">
+                        <div class="tags">
+                            <a href="" class="tag">
+                                <span>12:00</span>
+                            </a>
+                        </div>
+                        <div class="block_content">
+                            <h2 class="title">
+                                <a>剧本翻译</a>
+                            </h2>
+
+                            <div class="byline">
+                                <span>Eric </span><a href="#">查看简历</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="block">
+                        <div class="tags">
+                            <a href="" class="tag">
+                                <span>12:00</span>
+                            </a>
+                        </div>
+                        <div class="block_content">
+                            <h2 class="title">
+                                <a>剧本翻译</a>
+                            </h2>
+
+                            <div class="byline">
+                                <span>Eric </span><a href="#">查看简历</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

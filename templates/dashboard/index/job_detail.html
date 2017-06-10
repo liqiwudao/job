@@ -1,0 +1,147 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title%}
+职位详情
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+</style>
+
+<ol class="breadcrumb">
+    <li><a href="/dashboard/job/">职位列表</a></li>
+    <li class="active">职位详情</li>
+</ol>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <form class="form-horizontal form-label-left input_mask">
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位类别</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.classes }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位名称</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.name }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位诱惑</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.temptation }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">招聘部门</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.department }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作性质</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12" id="job_category">
+                    <input type="text" class="form-control" value="{{ data.category }}" placeholder="" disabled>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作经验</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="job_experience">-->
+                    <input type="text" class="form-control" value="{{ data.experience }}" placeholder="" disabled>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">学历要求</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" value="{{ data.education }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">月薪范围 (K)</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" value="{{ data.salary_start }}-{{data.salary_end}}k"
+                           placeholder="" disabled>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作地点</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.location }}" placeholder="" disabled>
+                </div>
+            </div>
+
+        </form>
+
+        </br>
+
+
+        </br>
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">职位描述</label>
+
+            <div class="x_content">
+                <div>
+                    {{ data.description|safe }}
+                </div>
+
+
+
+                <a href="/dashboard/edit_job/?job_id={{ data.id }}" id="submit"
+                   class="btn btn-primary " style="margin-top: 15px; width: 100%">
+                    编辑
+                </a>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block script %}
+<!--<script src="/static/js/dashboard/bootstrap-wysiwyg.min.js"></script>-->
+<!--<script src="/static/js/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>-->
+<!--<script src="/static/js/vendors/google-code-prettify/src/prettify.js"></script>-->
+<!--<script src="/static/js/jquery.twbsPagination.min.js"></script>-->
+<!--<script src="/static/js/dashboard/candidates.js"></script>-->
+<!--<script src="/static/js/dashboard/publish_job.js"></script>-->
+
+{% endblock %}
