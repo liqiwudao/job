@@ -1,0 +1,80 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+投递箱
+{% endblock %}
+
+{% block body %}
+
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pt-94 pb-85 bg-3 bg-opacity-dark-blue-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h2 class="text-center text-white uppercase mb-17">投递箱</h2>
+
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center m-0">
+                            <li class="text-white uppercase ml-15 mr-15"><a href="/">主页</a></li>
+                            <li class="text-white uppercase ml-15 mr-15">投递箱</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Start of Single Job Post Area-->
+<div class="single-job-post-area pt-70 mb-120">
+    <div class="container">
+        <div class="row">
+
+            <div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs drop-tab" role="tablist">
+                    <li role="presentation" class="active"><a href="#" name="0" aria-controls="home" role="tab"
+                                                              data-toggle="tab">全部</a></li>
+                    <li role="presentation"><a href="#" role="tab" name="100"
+                                               data-toggle="tab">投递成功</a></li>
+                    <li role="presentation"><a href="#" role="tab" name="200" data-toggle="tab">邀请面试</a>
+                    </li>
+                    <li role="presentation"><a href="#" role="tab" name="300" data-toggle="tab">不合适</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+
+                        <div class="job-post-container fix mb-70 pt-10" id="body">
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--End of Single Job Post Area-->
+
+
+{% endblock %}
+
+
+<!--End of Account Area-->
+{% block script %}
+<script src="/static/js/app/dropbox.js"></script>
+
+{% endblock %}

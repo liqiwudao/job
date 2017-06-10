@@ -1,0 +1,139 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+职位列表
+{% endblock %}
+
+{% block body %}
+
+
+
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pt-94  bg-3 bg-opacity-black-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h2 class="text-center text-white uppercase mb-17">职位列表</h2>
+
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center m-0">
+                            <li class="text-white uppercase ml-15 mr-15"><a href="/">主页</a></li>
+                            <li class="text-white uppercase ml-15 mr-15">职位列表</li>
+                        </ul>
+                    </div>
+                </div>
+                <form action="#" method="post">
+                    <div class="form-container fix bg-opacity-blue-85 mt-50">
+                        <div class="box-select">
+
+                            <div class="select large">
+                                <span class="select-title">工作经验: </span>
+                                <select name="category" id="experience">
+                                    <option value="0">全部</option>
+                                    <option value="1">不限</option>
+                                    <option value="2">应届毕业生</option>
+                                    <option value="3">1年以下</option>
+                                    <option value="4">1-3年</option>
+                                    <option value="5">3-5年</option>
+                                    <option value="6">5-10年</option>
+                                    <option value="7">10年以上</option>
+                                </select>
+                            </div>
+
+                            <div class="select small">
+                                <span class="select-title">职位类别: </span>
+
+                                <select name="date" id="job_class">
+                                    <option value="0">全部</option>
+                                    <option value="1">翻译</option>
+                                    <option value="2">演员</option>
+                                    <option value="3">编剧</option>
+                                </select>
+                            </div>
+
+
+                            <div class="select small">
+                                <span class="select-title">工作性质: </span>
+
+                                <select name="date" id="category">
+                                    <option value="0">全部</option>
+                                    <option value="1">全职</option>
+                                    <option value="2">兼职</option>
+                                    <option value="3">实习</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <button type="button" onclick="get_job_list(1, 30)" style="    margin-top: 23px;"
+                                class=" button-dark pull-right">搜索职位
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+
+
+<!--Start of Candidates Area-->
+<div class="candidates-area ptb-120">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="job-post-container fix mb-70" id="body">
+
+
+                    <!--<div class="single-job-post fix">-->
+                    <!--<div class="job-title col-4 pl-30">-->
+                    <!--<div class="fix pl-30 mt-29">-->
+                    <!--<h4 class=" mb-5"><span class="job-btn" job_id="1">剧本翻译</span><span-->
+                    <!--class="ml-10 job-time">2017-01-22</span></h4>-->
+
+                    <!--<div class="pt-5">-->
+                    <!--<span class="job-salary">10-25k</span>-->
+                    <!--<span class="ml-10">经验</span><span>1-3年</span>-->
+                    <!--<span>/</span>-->
+                    <!--<span>本科</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="address col-4 pl-50">-->
+                    <!--<span class="mtb-30 block">工作地点<br>-->
+                    <!--北京</span>-->
+                    <!--</div>-->
+                    <!--<div class=" col-2 text-center pt-24">-->
+                    <!--<h4>FilmSlate技术部</h4>-->
+
+                    <!--<div class="pt-10">-->
+
+                    <!--<span>出差补助、年底奖金、过节费</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+
+                </div>
+
+                <ul id="pagination-demo" class="pagination-md pull-right"></ul>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- End of Candidates Area -->
+
+
+{% endblock %}
+
+
+<!--End of Account Area-->
+{% block script %}
+<script src="/static/js/jquery.twbsPagination.min.js"></script>
+<script src="/static/js/candidates.js"></script>
+
+{% endblock %}

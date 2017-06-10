@@ -1,0 +1,375 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title%}
+简历详情
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+</style>
+
+<ol class="breadcrumb">
+    <li><a href="/dashboard/job/">简历列表</a></li>
+    <li class="active">简历详情</li>
+</ol>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <form class="form-horizontal form-label-left input_mask">
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">姓名</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.name }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">生日</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.birthday }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">性别</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    {% if data.sex == 1%}
+                    <input type="text" class="form-control" value="男" placeholder="" disabled>
+                    {% else %}
+                    <input type="text" class="form-control" value="女" placeholder="" disabled>
+                    {% endif%}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">手机号码</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ data.tel_num }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">联系邮箱</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12" id="job_category">
+                    <input type="text" class="form-control" value="{{ data.email }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            {% if data.education %}
+
+
+            {% for edu in data.education %}
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">学校名称</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ edu.school }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">所学专业</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ edu.major }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">学历</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" value="{{ edu.level }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">毕业年份</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" placeholder="" value="{{ edu.graduation_date }}" disabled>
+                </div>
+            </div>
+
+
+            {% endfor %}
+
+            {% else %}
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">学校名称</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">所学专业</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">学历</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">毕业年份</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            {% endif %}
+
+
+            {% if data.experience %}
+
+            {% for exp in data.experience %}
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">公司</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" value="{{ exp.company }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" value="{{ exp.job }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">在职时间</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" value="{{ exp.job_date_start }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">截止日期</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" value="{{ exp.job_date_end }}" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作内容</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                      <textarea name="textarea" class="fix small textarea" cols="30" rows="10" style="width: 100%"
+
+                                maxlength="500"
+
+                                placeholder="" readonly="">{{ exp.job_content }}</textarea>
+                    <!--<input type="text" class="form-control" value="" placeholder="" disabled>-->
+                </div>
+            </div>
+
+            {% endfor %}
+
+            {% else %}
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">公司</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">职位</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">在职时间</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">截止日期</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">工作内容</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" disabled>
+                </div>
+            </div>
+
+            {% endif%}
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">期望职位</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" value="{{data.expect_job}}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">期望月薪（元）</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" value="{{ data.expect_salary}}" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">补充说明</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                        <textarea name="textarea" class="fix small textarea" cols="30" rows="10" style="width: 100%"
+
+                                  maxlength="500"
+
+                                  placeholder="" readonly="">{{data.postscript}}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">自我描述</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                       <textarea name="textarea" class="fix small textarea" cols="30" rows="10" style="width: 100%"
+
+                                 maxlength="500"
+
+                                 placeholder="" readonly="">{{data.description}}</textarea>
+                </div>
+            </div>
+
+            {% if data.file_url %}
+
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">附件简历</label>
+
+                <div class="mt-9" style="margin-top: 9px">
+
+                    <a href="/api/download_resume/?user_id={{data.user_id}}">{{ data.filename }}</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">附件简历</label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <!--<select class="form-control" id="education">-->
+                    <input type="text" class="form-control" placeholder="" value="未上传附件简历" disabled>
+                </div>
+            </div>
+
+
+            {% endif%}
+
+
+        </form>
+
+        </br>
+
+
+        </br>
+
+        <div class="form-group">
+
+
+            <div class="x_content">
+
+                {% if data.drop_state == 100 %}
+
+                <div class="" style="margin-left: 30%">
+                    <a href="#" id="pass"
+                       class="btn btn-primary " style="margin-top: 15px; width: 30%">
+                        通过
+                    </a>
+
+                    <a href="#" id="reject"
+                       class="btn btn-danger " style="margin-top: 15px; width: 30%">
+                        驳回
+                    </a>
+
+                </div>
+
+                {% elif data.drop_state == 200 %}
+                <button type="button" class="btn btn-success" disabled style="width: 100%">以通过</button>
+                {% elif data.drop_state == 300 %}
+                <button type="button" class="btn btn-danger" disabled style="width: 100%">以驳回</button>
+                {% endif %}
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block script %}
+<!--<script src="/static/js/dashboard/bootstrap-wysiwyg.min.js"></script>-->
+<!--<script src="/static/js/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>-->
+<!--<script src="/static/js/vendors/google-code-prettify/src/prettify.js"></script>-->
+<!--<script src="/static/js/jquery.twbsPagination.min.js"></script>-->
+<!--<script src="/static/js/dashboard/candidates.js"></script>-->
+<script src="/static/js/dashboard/resume.js"></script>
+
+{% endblock %}

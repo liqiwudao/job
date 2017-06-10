@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <title>FilmSlate | {% block title %}控制台{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/static/css/bootstrap-table.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/css/dashboard/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/static/css/dashboard/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/static/css/dashboard/custom.min.css" rel="stylesheet">
+    <link href="/static/css/dashboard/index.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="/dashboard/" class="site_title"><i class="fa fa-paw"></i> <span>FilmSlate</span></a>
+                </div>
+
+
+                <br/>
+                <br/>
+                <br/>
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa  fa-tachometer"></i><span class="fa fa-chevron-down"></span>控制台</a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/dashboard/">仪表板</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-file-text-o"></i><span class="fa fa-chevron-down"></span>简历库</a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/dashboard/resume/">简历列表</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a><i class="fa  fa-briefcase"></i><span class="fa fa-chevron-down"></span>职位</a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/dashboard/job/">职位列表</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a><i class="fa fa-user"></i></i><span class="fa fa-chevron-down"></span>用户管理</a>
+                                <ul class="nav child_menu">
+                                    <li><a href="#">用户列表</a></li>
+                                    <li><a href="#">角色列表</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- /sidebar menu -->
+
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <!--<img src="/static/images/dashboard/img.jpg" alt="">John Doe-->
+                                <span id="user_name"></span>
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+
+                                <li><a href="/api/admin_login_out/"><i class="fa fa-sign-out pull-right"></i>退出</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+
+
+        <div class="right_col" role="main">
+            <div class="">
+                {% block body %}
+                {% endblock %}
+
+            </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Copyright <a href="http://www.tongchuangzuo.com">JiWen Zheng</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+<!-- Bootstrap -->
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="/static/js/dashboard/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="/static/js/dashboard/nprogress.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/static/js/dashboard/custom.min.js"></script>
+
+<script src="/static/js/dashboard/login.js"></script>
+{% block script %}
+{% endblock %}
+</body>
+</html>

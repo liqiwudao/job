@@ -1,0 +1,384 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+我的简历
+{% endblock %}
+
+{% block body %}
+
+
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pt-94 pb-85 bg-3 bg-opacity-dark-blue-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h2 class="text-center text-white uppercase mb-17">我的简历</h2>
+
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center m-0">
+                            <li class="text-white uppercase ml-15 mr-15"><a href="/">主页</a></li>
+                            <li class="text-white uppercase ml-15 mr-15">我的简历</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breaxdcrumb Banner Area-->
+
+<!--Start of Single Job Post Area-->
+<div class="single-job-post-area pt-70 mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="#">
+                    <div class="single-job-content">
+
+
+                        <div id="info" class="title uppercase mt-45 mb-38"><span class="lg">基本信息</span>
+                            <!--<a href="#"-->
+                            <!--class="button button-medium-box button-red pull-right">编辑</a>-->
+                        </div>
+                        <div class="single-job-form">
+
+
+                            <div class="single-info pb-14">
+                                <label for="name" class="uppercase pull-left m-0">姓名</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" maxlength="16" id="name" name="name"
+                                           placeholder="" readonly="" value="{{ resume.name }}">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="birthday" class="uppercase pull-left m-0">生日</label>
+
+                                <div class="form-box fix">
+                                    <input id="birthday" placeholder="" class="mbsc-comp"
+                                           readonly="" value="{{ resume.birthday }}">
+                                </div>
+                            </div>
+
+                            <div class="single-info">
+
+                                <div class="single-info mb-14">
+
+                                    <label class="uppercase pull-left m-0">性别</label>
+
+                                    <div class="form-box fix">
+                                        {% if resume.sex == 1%}
+                                        <input placeholder="" class="mbsc-comp"
+                                               readonly="" value="男">
+                                        {% else %}
+                                        <input placeholder="" class="mbsc-comp"
+                                               readonly="" value="女">
+
+
+                                        {% endif%}
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="single-info mb-14">
+                                <label for="tel_num" class="uppercase pull-left m-0">手机号码</label>
+
+                                <div class="form-box fix">
+                                    <input type="tel" name="country" maxlength="11" id="tel_num"
+                                           placeholder="" readonly="" value="{{ resume.tel_num }}">
+                                </div>
+                            </div>
+
+
+                            <div class="single-info mb-14">
+                                <label for="email" class="uppercase pull-left m-0">联系邮箱</label>
+
+                                <div class="form-box fix">
+                                    <input type="email" name="country" maxlength="48" id="email"
+                                           placeholder="" readonly="" value="{{ resume.email }}">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">教育经历</span></div>
+                        <div class="single-job-form">
+
+                            {% if resume.education %}
+
+
+                            {% for edu in resume.education %}
+
+                            <div class="single-info mb-14">
+                                <label for="school" class="uppercase pull-left m-0">学校名称</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" id="school" name="address"
+                                           placeholder="" value="{{ edu.school }}" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="major" class="uppercase pull-left m-0">所学专业</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" id="major" name="address" value="{{ edu.major }}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="level" class="uppercase pull-left m-0">学历</label>
+
+                                <div class="form-box fix ">
+                                    <input type="text" id="level" name="address" value="{{ edu.level }}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+                            <div class="single-info mb-14">
+                                <label for="graduation_date" class="uppercase pull-left m-0">毕业年份</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" id="graduation_date" name="address"
+                                           placeholder="" value="{{edu.graduation_date}}" readonly="">
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <div class="single-info mb-14">
+                                <label for="school" class="uppercase pull-left m-0">学校名称</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="address"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="major" class="uppercase pull-left m-0">所学专业</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="address"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="level" class="uppercase pull-left m-0">学历</label>
+
+                                <div class="form-box fix ">
+                                    <input type="text" name="address"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+                            <div class="single-info mb-14">
+                                <label for="graduation_date" class="uppercase pull-left m-0">毕业年份</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="address"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+                            {% endif %}
+
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">工作经历</span></div>
+                        <div class="single-job-form">
+                            {% if resume.experience %}
+
+                            {% for exp in resume.experience %}
+
+                            <div class="single-info mb-14">
+                                <label for="company" class="uppercase pull-left m-0">公司</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="company" value="{{ exp.company }}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job" class="uppercase pull-left m-0">职位</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="job" value="{{ exp.job }}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job_date_start" class="uppercase pull-left m-0">在职时间</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="job_date_start"
+                                           value="{{ exp.job_date_start}}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job_date_end" class="uppercase pull-left m-0">截止日期</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="job_date_end"
+                                           value="{{ exp.job_date_end}}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">工作内容</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix textarea" cols="30" rows="10" id="job_content"
+                                              placeholder="" readonly="">{{ exp.job_content  }}</textarea>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                            {%else%}
+                            <div class="single-info mb-14">
+                                <label for="company" class="uppercase pull-left m-0">公司</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job" class="uppercase pull-left m-0">职位</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job_date_start" class="uppercase pull-left m-0">在职时间</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-14">
+                                <label for="job_date_end" class="uppercase pull-left m-0">截止日期</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+
+
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">工作内容</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix textarea" cols="30" rows="10"
+                                              placeholder="" readonly=""></textarea>
+                                </div>
+                            </div>
+
+                            {% endif%}
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">期望工作</span></div>
+                        <div class="single-job-form">
+                            <div class="single-info mb-14">
+                                <label for="expect_job" class="uppercase pull-left m-0">期望职位</label>
+
+                                <div class="form-box fix">
+                                    <input type="text" name="school_name" id="expect_job"
+                                           value="{{ resume.expect_job }}"
+                                           placeholder="" readonly="">
+                                </div>
+                            </div>
+                            <div class="single-info mb-14">
+                                <label for="expect_salary" class="uppercase pull-left m-0">期望月薪（元）</label>
+
+                                <div class="form-box fix">
+                                    <input type="number" id="expect_salary" name="degree" placeholder="" maxlength="10"
+                                           value="{{ resume.expect_salary }}"
+                                           readonly="">
+                                </div>
+                            </div>
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">补充说明</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix small textarea" cols="30" rows="10"
+                                              id="postscript"
+                                              maxlength="500"
+
+                                              placeholder="" readonly="">{{resume.postscript}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title uppercase mt-45 mb-38"><span class="lg">其它信息</span></div>
+                        <div class="single-job-form">
+
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">自我描述</label>
+
+                                <div class="desc fix">
+                                    <textarea name="textarea" class="fix small textarea" cols="30" rows="10"
+
+                                              id="description"
+                                              maxlength="500"
+                                              readonly="">{{resume.description}}</textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="single-info mb-14 fix">
+                                <label class="uppercase pull-left m-0">附件简历</label>
+                                {% if resume.file_url %}
+
+                                <div style="margin-top: 9px">
+
+                                    <a href="/api/download_resume/">{{ resume.filename }}</a>
+                                </div>
+                                {% else %}
+                                <div class="form-box fix">
+                                    <input type="number" name="degree" placeholder="未上传附件简历" maxlength="10"
+
+                                           readonly="">
+                                </div>
+                                {% endif%}
+
+                            </div>
+
+
+                            <div class="ml-160 mt-42">
+                                <a href="/user/resume_edit/" id="edit" class="button button-medium-box button-red">编辑</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Single Job Post Area-->
+
+
+{% endblock %}
+
+
+<!--End of Account Area-->
+{% block script %}
+
+<script src="/static/js/resume_edit.js"></script>
+
+{% endblock %}

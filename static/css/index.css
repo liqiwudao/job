@@ -1,0 +1,195 @@
+/***********************************************************
+*** CUSTOMIZE THE LOADING SCREEN BACKGROUND + ICON COLORS
+************************************************************/
+/* loading screen background color */
+#bonfire-pageloader {
+    background-color: #ffffff;
+    opacity: 0.6;
+}
+
+/* loading icon color */
+#bonfire-pageloader svg {
+    fill: #4fc1f0;
+}
+
+/***********************************************************
+*** THE NITTY-GRITTY
+************************************************************/
+/* the pageloader */
+#bonfire-pageloader {
+    position: absolute;
+    z-index: 99999999999999;
+    width: 100%;
+    height: 1000%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: -50px;
+}
+
+.bonfire-pageloader-fade {
+    opacity: 0 !important;
+
+    -webkit-transition: all .75s ease;
+    -moz-transition: all .75s ease;
+    -o-transition: all .75s ease;
+    -ms-transition: all .75s ease;
+    transition: all .75s ease;
+}
+
+.bonfire-pageloader-hide {
+    display: none;
+}
+
+/* the loading icon */
+.bonfire-pageloader-icon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin: 100px 0 0 0;
+    opacity: 1;
+    top: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.bonfire-pageloader-icon-hide {
+    opacity: 0 !important;
+
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    transition: all .25s ease;
+}
+
+#bonfire-pageloader svg {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    width: 100px;
+    height: 100px;
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+/*.fixed-bg-1 {background: rgba(0, 0, 0, 0) url("/static/images/slider/head2.jpg") no-repeat fixed center top / cover ;}*/
+.fixed-bg-1 {
+    background: rgba(0, 0, 0, 0) url("http://ohct13lbb.bkt.clouddn.com/head2.jpg") no-repeat fixed center top / cover;
+}
+
+.bg-1 {
+    /*background: url("/static/images/bg/out_out5.jpg");*/
+    background: url("http://ohct13lbb.bkt.clouddn.com/out_out5.jpg");
+}
+
+.bg-2 {
+    /*background: url("/static/images/bg/abc_out.jpg");*/
+    background: url("http://ohct13lbb.bkt.clouddn.com/abc_out.jpg");
+}
+
+.bg-3 {
+    /*background: rgba(0, 0, 0, 0) url(/static/images/slider/head2.jpg) no-repeat fixed center top / cover;*/
+    /*background: rgba(0, 0, 0, 0) url(/static/images/slider/head2.jpg) no-repeat fixed center top / cover;*/
+    background: rgba(0, 0, 0, 0) url("http://ohct13lbb.bkt.clouddn.com/head2.jpg") no-repeat fixed center top / cover;
+
+}
+
+.mean-container .mean-bar:before {
+    content: 'FileSlate';
+}
+
+.single-fun-factor h1, h3 {
+    color: #ffffff;
+}
+
+.single-job-content .popover {
+    color: red;
+}
+
+.login .popover {
+    color: red;
+
+}
+
+.select-title {
+    color: #ffffff;
+    font-size: 18px;
+
+}
+
+.select select {
+    margin-top: 5px;
+}
+
+.drop-success {
+    color: #14b1bb;
+    font-family: "montserratsemi_bold";
+    font-size: 18px;
+    line-height: 24px
+}
+
+.drop-wait {
+    color: #2D3E50;
+    font-family: "montserratsemi_bold";
+    font-size: 18px;
+    line-height: 24px
+}
+
+.drop-fail {
+    color: #F15B65;
+    font-family: "montserratsemi_bold";
+    font-size: 18px;
+    line-height: 24px
+}
+
+.black {
+    color: black;
+}
+
+.num-list {
+    list-style: decimal;
+}
+
+.num-list li {
+    list-style: decimal;
+}
+
+.num-list ol {
+    list-style: decimal;
+}
+
+.job-btn {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+.job-time {
+    font-size: 18px;
+    color: #ccc
+}
+
+.job-salary {
+    font-size: 18px;
+    color: #ff8400;
+}
+
+

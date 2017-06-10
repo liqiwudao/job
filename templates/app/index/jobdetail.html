@@ -1,0 +1,128 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+我的简历
+{% endblock %}
+
+{% block body %}
+
+<style>
+    .job-btn {
+        cursor: pointer;
+        color: #337ab7;
+    }
+
+    .job-time {
+        font-size: 18px;
+        color: #afadad;
+    }
+
+    .job-salary {
+        font-size: 18px;
+        color: #ff8400;
+    }
+
+</style>
+
+
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pt-94 pb-85 bg-3 bg-opacity-dark-blue-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h2 class="text-center text-white uppercase mb-17">职位详情</h2>
+
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center m-0">
+                            <li class="text-white uppercase ml-15 mr-15"><a href="/candidates/">职业机会</a></li>
+                            <li class="text-white uppercase ml-15 mr-15">职位详情</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Start of Single Job Post Area-->
+<div class="single-job-post-area pt-70 mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="#">
+                    <div class="single-job-content">
+                        <div class="area-title text-center">
+                            <h2 class="pt-10 pb-10">{{ data.name }}</h2>
+                        </div>
+
+                        <div class="single-job-form">
+                            <div class="single-info mb-14 pt-10">
+                                <p style="font-size: 18px">
+                                    <span class="job-salary">{{data.salary}}</span>
+                                    <span>/</span>
+                                    <span>经验{{data.experience}}</span>
+                                    <span>/</span>
+                                    <span>学历</span><span>{{data.education}}</span>
+                                    <span>/</span>
+                                    <span>{{data.category}}</span>
+
+                                    <span class="job-time pull-right">
+
+                                        <span>{{data.time}}</span><span> 发布于FilmSlate</span>
+                                    </span>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-38">
+                            {% if data.post_flag %}
+                            <a job_id="{{data.id}}" id="submit" style="cursor: pointer" type="button"
+                               class="button button-large-box lg-btn ">投个简历</a>
+                            {% else %}
+                            <a  class="button button-large-box lg-btn  button-red">已投递</a>
+                            {% endif %}
+
+                        </div>
+
+                        <div class="title uppercase mt-58 mb-25"><span class="medium">职位诱惑</span></div>
+                        <div class="single-job-form">
+                            <div class="single-info mb-14">
+                                <p>{{data.temptation}}</p>
+                            </div>
+                        </div>
+                        <div class="title uppercase pt-70 pb-26"><span>职位描述</span></div>
+                        <div class="single-job-form">
+
+                            <div class="num-list">
+                                {{data.description|safe}}
+                            </div>
+
+                        </div>
+
+
+                        <div class="title uppercase pt-47 pb-26"><span class="medium">工作地址</span></div>
+                        <div class="single-job-form">
+                            <p>{{data.location}}</p>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Single Job Post Area-->
+
+
+{% endblock %}
+
+
+<!--End of Account Area-->
+{% block script %}
+<!--<script src="/static/js/resume.js"></script>-->
+<script src="/static/js/jobdetail.js"></script>
+
+{% endblock %}

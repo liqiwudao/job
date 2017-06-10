@@ -1,0 +1,90 @@
+{% extends 'dashboard/base.html' %}
+
+{% block body %}
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>职位列表
+
+            </h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+
+            <div id="datatable-fixed-header_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                <div class="row">
+
+                    <div class="col-sm-12">
+
+                        <div class=" form-group pull-left " style='margin-left: 15px'>
+                            <span>职位类别：</span>
+                            <!--<input type="text" class="form-control">-->
+                            <select class="form-control " id="job_class">
+                                <option value="0" selected>全部</option>
+                                <option value="1">翻译</option>
+                                <option value="2">演员</option>
+                                <option value="3">编剧</option>
+                            </select>
+                        </div>
+
+                        <button onclick="get_job_list(1, 30)" style="margin-left: 15px" type="button"
+                                class="btn btn-success btn-sm">搜索
+                        </button>
+
+
+                        <div class="pull-right">
+                            <a href="/dashboard/publish_job/" style="margin-left: 15px" target="_blank"
+                               class="btn btn-primary btn-sm"><i
+                                    style="margin-right: 5px"
+                                    class="fa fa-plus"></i>发布新职位</a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top: 15px">
+                    <div class="col-sm-12 col-xs-12">
+                        <table id="table" data-height="500">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>位置</th>
+                                <th>类型</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <ul id="pagination-demo" class="pagination-md pull-right"></ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block title%}
+职位列表
+{% endblock %}
+
+
+{% block script %}
+<script src="/static/js/bootstrap-table.min.js"></script>
+<script src="/static/js/bootstrap-table-zh-CN.min.js"></script>
+<script src="/static/js/jquery.twbsPagination.min.js"></script>
+<script src="/static/js/dashboard/job_list.js"></script>
+{% endblock %}
